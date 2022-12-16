@@ -73,16 +73,6 @@ builder.Services.AddAuthentication(x =>
             var tokenValidatorService = context.HttpContext.RequestServices.GetRequiredService<ITokenValidatorService>();
             return tokenValidatorService.ValidateAsync(context);
         },
-        //OnMessageReceived = context =>
-        //{
-        //    return Task.CompletedTask;
-        //},
-        //OnChallenge = context =>
-        //{
-        //    var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
-        //    logger.LogError($"OnChallenge error : {context.Error} === {context.ErrorDescription}");
-        //    return Task.CompletedTask;
-        //}
     };
 });
 
@@ -164,28 +154,7 @@ builder.Services.AddSwaggerGen(
     }
 );
 
-//builder.Services.AddSwaggerGen(c => {
-//    c.SwaggerDoc("v1", new Info { Title = "You api title", Version = "v1" });
-//    c.AddSecurityDefinition("Bearer",
-//        new ApiKeyScheme
-//        {
-//            In = "header",
-//            Description = "Please enter into field the word 'Bearer' following by space and JWT",
-//            Name = "Authorization",
-//            Type = "apiKey"
-//        });
-//    c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>> {
-//        { "Bearer", Enumerable.Empty<string>() },
-//    });
-
-//});
-
-
-
 var app = builder.Build();
-
-
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

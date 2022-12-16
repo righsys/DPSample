@@ -35,11 +35,11 @@ namespace DPSample.Services.ServiceImplementations
                 return;
             }
 
-            //var user = await _userQueryRepository.FindByKeyAsync(Convert.ToInt32(userId));
-            //if (user == null || !user.IsActive)
-            //{
-            //    context.Fail("This token is expired. Please login again.");
-            //}
+            var user = await _userQueryRepository.FindByKeyAsync(Convert.ToInt32(userId));
+            if (user == null || !user.IsActive)
+            {
+                context.Fail("This token is expired. Please login again.");
+            }
 
             var accessToken = context.SecurityToken as JwtSecurityToken;
             if (accessToken == null || string.IsNullOrWhiteSpace(accessToken.RawData) ||

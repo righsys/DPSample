@@ -15,7 +15,8 @@ namespace DPSample.Services.ServiceImplementations
         private readonly IUserTokenQueryRepository _userTokenQueryRepository;
         private readonly IUserTokenCommandRepository _userTokenCommandRepository;
 
-        public TokenStoreService(IMediator mediator, IUserTokenQueryRepository userTokenQueryRepository, IUserTokenCommandRepository userTokenCommandRepository)
+        public TokenStoreService(IMediator mediator, IUserTokenQueryRepository userTokenQueryRepository, 
+            IUserTokenCommandRepository userTokenCommandRepository)
         {
             _mediator = mediator;
             _userTokenQueryRepository = userTokenQueryRepository;
