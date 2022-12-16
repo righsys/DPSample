@@ -127,7 +127,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(
     g => {
-        //g.SwaggerDoc("", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "DP Sample" });
         g.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme()
         {
             In = Microsoft.OpenApi.Models.ParameterLocation.Header,
